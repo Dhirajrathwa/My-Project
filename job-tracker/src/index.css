@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: #f1f5f9;
+}
+
+/* Layout */
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Stats Cards */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.stat-card p {
+  margin: 0;
+  color: gray;
+}
+
+.stat-card h2 {
+  margin: 5px 0 0;
+}
+
+/* Form */
+.form {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input, select {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+button {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Buttons */
+.btn-add { background: #2563eb; color: white; }
+.btn-edit { background: #16a34a; color: white; }
+.btn-delete { background: #dc2626; color: white; }
+
+/* Search & Filter */
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+/* Job Card */
+.job-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.job-info h3 {
+  margin: 0;
+}
+
+.job-info p {
+  margin: 3px 0;
+  color: gray;
+}
+
+/* Status badge */
+.status {
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.dark {
+  background: #111;
+  color: #fff;
+}
+.dark .job-card,
+.dark .stat-card,
+.dark .form {
+  background: #1e293b;
+}
+.status.Applied { background: #e5e7eb; }
+.status.Interview { background: #dbeafe; color: blue; }
+.status.Rejected { background: #fee2e2; color: red; }
+.status.Offer { background: #dcfce7; color: green; }
