@@ -11,6 +11,7 @@ import Checkout from "./pages/Checkout";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
+import AdminDashboard from "./pages/AdminDashboard";
 function App() {
   return (
     <BrowserRouter>
@@ -26,8 +27,7 @@ function App() {
         <Route path="/checkout" element={<Checkout/>}/>
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        
-      </Routes>
+        <Route path="/admin" element={<ProtectedRoute role="admin"><AdminDashboard /></ProtectedRoute>}/>      </Routes>
       <Footer/>
     </BrowserRouter>
   );

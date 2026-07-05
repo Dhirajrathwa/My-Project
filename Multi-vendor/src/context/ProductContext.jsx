@@ -14,27 +14,29 @@ export default function ProductProvider({ children }) {
     }
   }, []);
 
-  // ✅ Add Product
-  const addProduct = (newProduct) => {
-    const updatedProducts = [...products, newProduct];
+const addProduct = (product) => {
+  const updated = [...products, product];
+  setProducts(updated);
+  localStorage.setItem("products", JSON.stringify(updated));
+};
 
-    setProducts(updatedProducts);
+const deleteProduct = (id) => {
+  const updated = products.filter((p) => p.id !== id);
+  setProducts(updated);
+  localStorage.setItem("products", JSON.stringify(updated));
+};
 
-    localStorage.setItem("products", JSON.stringify(updatedProducts));
-  };
+const updateProduct = (updatedProduct) => {
+  const updated = products.map((p) =>
+    p.id === updatedProduct.id ? updatedProduct : p
+  );
 
-  // ✅ Delete Product
-  const deleteProduct = (id) => {
-    const updated = products.filter(p => p.id !== id);
-
-    setProducts(updated);
-
-    localStorage.setItem("products", JSON.stringify(updated));
-  };
-
+  setProducts(updated);
+  localStorage.setItem("products", JSON.stringify(updated));
+};
   return (
     <ProductContext.Provider 
-      value={{ products, addProduct, deleteProduct }}
+      value={{ products, addProduct, deleteProduct, updateProduct,setProducts }}
     >
       {children}
     </ProductContext.Provider>
