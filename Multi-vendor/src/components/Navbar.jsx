@@ -27,13 +27,8 @@ export default function Navbar() {
             Hello, {user.email}
           </span><button
             onClick={logout}
-            style={{
-             
-              background: "orange",
-              border: "none",
-              padding: "5px 10px",
-              cursor: "pointer"
-            }}
+            className="bg-red-500 text-white px-2 py-0.5 rounded-lg hover:bg-red-600"
+            
           >
               Logout
             </button>
@@ -46,8 +41,9 @@ export default function Navbar() {
         </div>
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
-        <Link to="/Cart">Cart ({count})</Link>
-
+        <Link to="/Cart" className="relative  text-white px-2 py-0 rounded-md hover:bg-green-600">
+          Cart ({count})
+        </Link>
       </div>
     </nav>
 
